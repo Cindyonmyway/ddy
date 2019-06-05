@@ -1,0 +1,73 @@
+@import "../../template/invi_msg.wxss";
+
+.background{
+  background-color: rgb(121, 158, 202);
+  padding: 3%;
+}
+
+.site{
+  text-align: center;
+
+}
+.site button{
+  width: 30%;
+  height: 50rpx;
+  line-height: 50rpx;
+  font-size: 30rpx;
+  display: inline-block;
+}
+
+.whole_container {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10rpx;
+  background-color: white;
+  border-radius: 20rpx;
+}
+
+.selectBox {
+  width: 100%;
+  border: 1rpx solid black;
+}
+
+.ts_tabSwiper {
+  width: 100%;
+}
+
+.ts_tab {
+  width: 50%;
+  display: inline-block;
+}
+
+#ts_tabBorer {
+  font-weight: bold;
+}
+
+.ts_list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.ts_item {
+  margin: 10rpx 3.5%;
+  border-radius: 10rpx;
+  width: 25%;
+  display: inline-block;
+  border: 1rpx solid black;
+  text-align: center;
+}
+
+.ts_container {
+  border: 1rpx solid black;
+  border-radius: 20rpx;
+}
+
+.ts_tab {
+  text-align: center;
+}
+
+.ts_swiper {
+  height: 150rpx;
+}
+

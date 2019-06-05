@@ -1,0 +1,46 @@
+<import src="../../template/invi_msg.wxml" />
+
+<view class='background'>
+  <view class='whole_container'>
+    <!--logs.wxml-->
+
+    <view class='site'>{{name}}
+      <button bindtap='chooseLocation'>修改定位</button>
+    </view>
+
+
+    <view class='ts_container'>
+      <view class='ts_tabSwiper'>
+        <view class='ts_tab' id='{{ts_currentIndex == 0 ? "ts_tabBorer" : ""}}' data-current="0" bindtap='ts_checkCurrent'>{{ts_type}}</view>
+        <view class='ts_tab' id='{{ts_currentIndex == 1 ? "ts_tabBorer" : ""}}' data-current="1" bindtap='ts_checkCurrent'>{{ts_sort}}</view>
+      </view>
+      <swiper current="{{ts_currentIndex}}" class='ts_swiper' duration="300" bindchange="ts_bindChange" wx:if="{{ts_show}}">
+        <swiper-item>
+          <view class='ts_list'>
+            <view wx:for="{{ts_typeArray}}" data-index="{{index}}" class='ts_item' bindtap='ts_setType'>
+              {{item.text}}
+            </view>
+          </view>
+        </swiper-item>
+        <swiper-item>
+          <view class='ts_list'>
+            <view wx:for="{{ts_sortArray}}" data-index="{{index}}" class='ts_item' bindtap='ts_setSort'>
+              {{item.text}}
+            </view>
+          </view>
+        </swiper-item>
+      </swiper>
+    </view>
+
+
+    <view>hi</view>
+
+
+
+    <template is="invi_msg" data="{{...invi_msg}}" />
+
+
+
+
+  </view>
+</view>

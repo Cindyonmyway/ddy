@@ -1,0 +1,26 @@
+/* pages/detail/detail.wxss */
+.background{
+  background-color: rgb(121, 158, 202);
+  padding: 3%;
+}
+
+.whole_container {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10rpx;
+  background-color: white;
+  border-radius: 20rpx;
+}
+
+.my_msg{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.my_img{
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  background-color: grey;
+}

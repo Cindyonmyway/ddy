@@ -1,0 +1,14 @@
+<!--pages/myMsg/myMsg.wxml-->
+
+<view class='background'>
+  <view class='whole_container'>
+    <view>
+      <view class='my_msg'>
+        <view class='my_img'></view>
+        <view class='my_id'>{{my_id}}</view>
+        <view class='my_score'>⭐{{my_score}}</view>
+        <view class='my_intro'>{{my_intro}}</view>
+      </view>
+    </view>
+  </view>
+</view>

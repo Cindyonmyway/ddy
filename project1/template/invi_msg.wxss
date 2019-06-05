@@ -1,0 +1,33 @@
+/* template/invi_msg.wxss */
+.invi_container {
+  height: 260rpx;
+  padding: 10rpx;
+  border: 1px solid black;
+  border-radius: 20rpx;
+  margin: 15rpx 0;
+}
+
+.invi_top {
+  height: 180rpx;
+  padding: 5rpx;
+  /* background-color: red; */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.invi_img{
+  height: 180rpx;
+  width: 180rpx;
+  border-radius: 50%;
+  background-color: grey;
+}
+
+.invi_bottom {
+  height: 60rpx;
+  padding: 5rpx;
+  /* background-color: blue; */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}

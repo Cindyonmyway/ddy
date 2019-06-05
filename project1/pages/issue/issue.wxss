@@ -1,0 +1,97 @@
+/* pages/issue/issue.wxss */
+
+.background{
+  background-color: rgb(121, 158, 202);
+  padding: 3%;
+}
+
+form{
+  overflow: scroll;
+}
+
+input{
+  padding-left: 57rpx;
+}
+
+form view{
+  margin-bottom: 15rpx;
+  margin-top: 15rpx;
+}
+
+.total_container{
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10rpx;
+  border-radius: 20rpx;
+  background-color: white;
+}
+
+.picker_view{
+  width: 92%;
+  height: 70%;
+  padding-top: 180rpx;
+  position: absolute;
+  left: 4%;
+  top: 15rpx;
+  z-index: 2;
+  border-radius: 20rpx;
+  background-color: white;
+}
+
+.picker_view button{
+  width: 30%;
+  margin: 20rpx auto;
+}
+
+.time_picker picker-view-column{
+  margin-left: 130rpx;
+}
+
+.date_picker picker-view-column{
+  margin-left: 85rpx;
+}
+
+.time{
+  display: flex;
+  flex-direction: row;
+}
+.time_view{
+  width: 33%;
+  text-align: center;
+}
+.time_button{
+  width: 33%;
+  font-size: 35rpx;
+}
+
+.chooseLocation{
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 40rpx;
+}
+
+.site{
+  text-align: center;
+}
+
+.title{
+  text-align: center;
+  font-size: 40rpx;
+  color: rgb(121, 158, 202);
+  font-weight: bold;
+}
+
+.submit{
+  height: 80rpx;
+  font-size: 40rpx;
+  line-height: 80rpx;
+  width: 50%;
+  font-weight: bold;
+}
+
+.warn{
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+

@@ -1,0 +1,7 @@
+<!--pages/map/map.wxml-->
+<!-- <map id="myMap" style="width: 100%; height: 300px;" latitude="{{latitude}}" longitude="{{longitude}}" markers='{{markers}}' circles='circles' bindregionchange='regionChange' show-location></map> -->
+
+<button bindtap='locationClick'>location</button>
+<button bindtap='chooseLocation'>choose location</button>
+<button bindtap='test'>test</button>
+<view>{{address}}</view>

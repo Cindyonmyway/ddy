@@ -1,0 +1,82 @@
+<view class='background'>
+  <!--pages/issue/issue.wxml-->
+  <view class='total_container'>
+    <view class='title'>发布邀请</view>
+    <form bindsubmit='formSubmit'>
+      <view>1、邀请类型</view>
+      <radio-group>
+        <radio value='' checked/>足球
+        <radio value='' />篮球
+        <radio value='' />跑步
+        <radio value='' />羽毛球
+      </radio-group>
+
+      <view class>2、时间</view>
+      <view class='time'>
+        <view class='time_view'>{{year}}.{{month}}.{{day}}</view>
+        <view class='time_view'>{{sHour}}:{{sMin}}</view>
+        <view class='time_view'>{{eHour}}:{{eMin}}</view>
+      </view>
+      <view class='time'>
+        <button class='time_button' bindtap='showDate'>选择日期</button>
+        <button class='time_button' bindtap='showSTime'>开始时间</button>
+        <button class='time_button' bindtap='showETime'>结束时间</button>
+      </view>
+
+      <view class='picker_view' wx:if="{{showDate}}">
+        <!--date-->
+        <picker-view indicator-style="height: 100rpx;" style="width: 100%; height: 600rpx;" value="{{value}}" bindchange="dateChange" class='date_picker'>
+          <picker-view-column>
+            <view wx:for="{{years}}" style="line-height: 100rpx">{{item}}年</view>
+          </picker-view-column>
+          <picker-view-column>
+            <view wx:for="{{months}}" style="line-height: 100rpx">{{item}}月</view>
+          </picker-view-column>
+          <picker-view-column>
+            <view wx:for="{{days}}" style="line-height: 100rpx">{{item}}日</view>
+          </picker-view-column>
+        </picker-view>
+        <button bindtap='closeDate'>确定</button>
+      </view>
+
+      <view class='picker_view' wx:if="{{showSTime}}">
+        <!--start time-->
+        <picker-view indicator-style="height: 100rpx;" style="width: 100%; height: 600rpx;" value="{{[0,0]}}" bindchange="sTimeChange" class='time_picker'>
+          <picker-view-column>
+            <view wx:for="{{hours}}" style="line-height: 100rpx">{{item}}时</view>
+          </picker-view-column>
+          <picker-view-column>
+            <view wx:for="{{mins}}" style="line-height: 100rpx">{{item}}分</view>
+          </picker-view-column>
+        </picker-view>
+        <button bindtap='closeSTime'>确定</button>
+      </view>
+
+      <view class='picker_view' wx:if="{{showETime}}">
+        <!--end time-->
+        <picker-view indicator-style="height: 100rpx;" style="width: 100%; height: 600rpx;" value="{{[0,0]}}" bindchange="eTimeChange" class='time_picker'>
+          <picker-view-column>
+            <view wx:for="{{hours}}" style="line-height: 100rpx">{{item}}时</view>
+          </picker-view-column>
+          <picker-view-column>
+            <view wx:for="{{mins}}" style="line-height: 100rpx">{{item}}分</view>
+          </picker-view-column>
+        </picker-view>
+        <button bindtap='closeETime'>确定</button>
+      </view>
+
+      <view>3、所需人数</view>
+      <input placeholder='人数' type='number' name='amount' />
+
+      <view>4、地点</view>
+      <view class='site'>{{name}}</view>
+      <button bindtap='chooseLocation' class='chooseLocation'>选择地点</button>
+
+      <view>5、详细说明</view>
+      <input placeholder='说明' name='detail' />
+      <button formType='submit' class='submit'>发布</button>
+      
+    </form>
+    <!-- <button bindtap='test'>test</button> -->
+  </view>
+</view>

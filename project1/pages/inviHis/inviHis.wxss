@@ -1,0 +1,42 @@
+/* pages/inviHis/inviHis.wxss */
+@import "../../template/invi_msg.wxss";
+
+.background{
+  background-color: rgb(121, 158, 202);
+  padding: 3%;
+}
+
+.whole_container{
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10rpx;
+  background-color: white;
+  border-radius: 20rpx;
+}
+
+.topTabSwiper{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+.topTabSwiper view{
+  flex: 1;
+  border-top: 1rpx solid #ccc;
+  border-bottom: 1rpx solid #ccc;
+  padding: 15rpx 0;
+  text-align: center;
+}
+#tabBorer{
+  border-bottom-color: #f00; color: #f00;
+}
+
+.swiper{
+  width: 100%;
+  height: 600rpx;
+}
+.swiper_con{
+  height: 100%;
+  width: 100%;
+  padding: 50rpx 0;
+  text-align: center;
+}

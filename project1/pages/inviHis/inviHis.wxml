@@ -1,0 +1,21 @@
+<!--pages/inviHis/inviHis.wxml-->
+<import src="../../template/invi_msg.wxml" />
+
+<view class='background'>
+  <view class='whole_container'>
+    <view class='topTabSwiper'>
+      <view class='tab' id='{{currentIndex == 0 ? "tabBorer" : ""}}' data-current="0" bindtap='checkCurrent'>发布历史</view>
+      <view class='tab' id='{{currentIndex == 1 ? "tabBorer" : ""}}' data-current="1" bindtap='checkCurrent'>受邀历史</view>
+    </view>
+    <swiper current="{{currentIndex}}" class='swiper' duration="300" bindchange="bindChange">
+      <swiper-item>
+        <template is="invi_msg" data="{{...invi_msg}}" />
+        <!-- <view class='swiper_con'>这里是发布历史</view> -->
+      </swiper-item>
+      <swiper-item>
+      <template is="invi_msg" data="{{...invi_msg}}" />
+        <!-- <view class='swiper_con'>这里是受邀历史</view> -->
+      </swiper-item>
+    </swiper>
+  </view>
+</view>

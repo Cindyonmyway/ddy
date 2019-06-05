@@ -1,0 +1,20 @@
+<!--template/invi_msg.wxml-->
+<template name='invi_msg'>
+  <view class='invi_container' bindtap='detail'>
+    <view class='invi_top'>
+      <view class='invi_img'></view>
+      <view class='invi_type'>{{invi_type}}</view>
+      <view class='invi_time'>
+        <view>{{invi_date}}</view>
+        <view>{{invi_time}}</view>
+      </view>
+      <view class='invi_num'>{{invi_num}}人</view>
+    </view>
+    <view class='invi_bottom'>
+      <view class='invi_name'>{{invi_name}}</view>
+      <view class='invi_address'>{{invi_address}}</view>
+      <view class='invi_grade'>⭐{{invi_grade}}</view>
+    </view>
+  </view>
+
+</template>
