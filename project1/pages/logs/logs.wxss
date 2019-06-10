@@ -7,7 +7,8 @@
 
 .site{
   text-align: center;
-
+  color: rgb(54, 182, 195);
+  font-size: 36rpx;
 }
 .site button{
   width: 30%;
@@ -35,12 +36,15 @@
 }
 
 .ts_tab {
-  width: 50%;
+  width: 47%;
   display: inline-block;
+  text-align: center;
+  font-size: 33rpx;
+  color: grey;
 }
 
 #ts_tabBorer {
-  font-weight: bold;
+  color: rgb(54, 182, 195);
 }
 
 .ts_list {
@@ -51,21 +55,19 @@
 
 .ts_item {
   margin: 10rpx 3.5%;
-  border-radius: 10rpx;
+  border-radius: 20rpx;
   width: 25%;
   display: inline-block;
-  border: 1rpx solid black;
+  border: 1rpx solid grey;
   text-align: center;
+  font-size: 33rpx;
 }
 
-.ts_container {
-  border: 1rpx solid black;
-  border-radius: 20rpx;
+
+.grey{
+  color: grey;
 }
 
-.ts_tab {
-  text-align: center;
-}
 
 .ts_swiper {
   height: 150rpx;

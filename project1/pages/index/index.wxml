@@ -11,8 +11,9 @@
     </block>
   </view>
   <view id='choose-container'>
-    <view class='choose' bindtap='myMsg'>个人信息</view>
-    <view class='choose' bindtap='issue'>发布邀请</view>
-    <view class='choose' bindtap='inviHis'>历史邀请</view>
+    <view class='choose song' bindtap='myMsg'>个人信息</view>
+    <view class='choose song' bindtap='issue'>发布邀请</view>
+    <view class='choose song' bindtap='inviHis'>历史邀请</view>
   </view>
+  
 </view>

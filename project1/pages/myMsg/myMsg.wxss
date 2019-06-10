@@ -12,9 +12,13 @@
   border-radius: 20rpx;
 }
 
+.golden{
+  color: rgb(255, 200, 61);
+}
+
 .my_img{
-  width: 120rpx;
-  height: 120rpx;
+  width: 200rpx;
+  height: 200rpx;
   border-radius: 50%;
   background-color: grey;
 }
@@ -22,5 +26,45 @@
 .my_msg{
   display: flex;
   flex-direction: column;
+  
+}
+
+.submit{
+  height: 80rpx;
+  font-size: 40rpx;
+  line-height: 80rpx;
+}
+
+.userinfo {
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  margin-bottom: 30rpx;
+}
+
+.userinfo-avatar {
+  width: 200rpx;
+  height: 200rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+  border: 1rpx solid rgb(121, 158, 202);
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.gap{
+  margin: 20rpx 0;
+  padding: 10rpx;
+}
+
+.song{
+  font-family: '宋体';
+}
+
+.line{
+  width: 100%;
+  height: 1rpx;
+  background-color: grey;
 }

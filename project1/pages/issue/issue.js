@@ -5,49 +5,51 @@ Page({
    * 页面的初始数据
    */
   data: {
-    latitude:'',
-    longitude:'',
-    name:'请选择地点',
-    address:'',
+    latitude: '',
+    longitude: '',
+    name: '未选择地点',
+    address: '',
 
-    value:[],
-    years:[],
-    months:[],
-    days:[],
-    year:'',
-    month:'',
-    day:'',
+    value: [],
+    years: [],
+    months: [],
+    dayInMonth: [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31],
+    days: [],
+    year: '',
+    month: '',
+    day: '',
 
-    hours:[],
-    mins:[],
-    secs:[],
-    sHour:0,
-    sMin:0,
+    hours: [],
+    mins: [],
+    secs: [],
+    sHour: 0,
+    sMin: 0,
     eHour: 0,
     eMin: 0,
 
-    showDate:false,
-    showSTime:false,
-    showETime:false,
+    showDate: false,
+    showSTime: false,
+    showETime: false,
   },
 
-  formSubmit:function(e){
-    let amount=(e.detail.value.amount.length==0);
+  formSubmit: function(e) {
+    let amount = (e.detail.value.amount.length == 0);
     let detail = (e.detail.value.detail.length == 0);
     let name = (this.data.name == '请选择地点');
-    if(amount||detail||name){
+    // console.log(this.data.dayInMonth[1]);
+    if (amount || detail || name) {
       console.log('表单未填写完整');
       return;
     }
     console.log('表单已填写完整');
   },
 
-  chooseLocation:function(e){
+  chooseLocation: function(e) {
     var that = this;
     wx.getSetting({
-      success: function (res) {
+      success: function(res) {
         wx.chooseLocation({
-          success: function (res) {
+          success: function(res) {
             that.setData({
               latitude: res.latitude,
               longitude: res.longitude,
@@ -55,9 +57,9 @@ Page({
               address: res.address
             });
           },
-          fail:function(res){
+          fail: function(res) {
             wx.openSetting({
-              
+
             })
           }
         })
@@ -69,14 +71,14 @@ Page({
     // console.log(that.data.address);
   },
 
-  showDate:function(e){
-    let that=this;
+  showDate: function(e) {
+    let that = this;
     that.setData({
-      showDate:true
+      showDate: true
     })
   },
 
-  closeDate: function (e) {
+  closeDate: function(e) {
     let that = this;
     that.setData({
       showDate: false
@@ -84,28 +86,28 @@ Page({
   },
 
 
-  showSTime:function(e){
+  showSTime: function(e) {
     let that = this;
     that.setData({
       showSTime: true
     })
   },
 
-  closeSTime: function (e) {
+  closeSTime: function(e) {
     let that = this;
     that.setData({
       showSTime: false
     })
   },
 
-  showETime: function (e) {
+  showETime: function(e) {
     let that = this;
     that.setData({
       showETime: true
     })
   },
 
-  closeETime: function (e) {
+  closeETime: function(e) {
     let that = this;
     that.setData({
       showETime: false
@@ -115,28 +117,33 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-    let that=this;
-    let date=new Date();
-    let theYears=[];
-    let theMonths=[];
-    let theDays=[];
-    let theHours=[];
-    let theMins=[];
-    let values=[];
+  onLoad: function(options) {
+    let that = this;
+    let date = new Date();
+    let theYears = [];
+    let theMonths = [];
+    let theDays = [];
+    let theHours = [];
+    let theMins = [];
+    let values = [];
+    let dayInMonth = that.data.dayInMonth;
+
+    if (date.getFullYear() % 4 == 0 && date.getFullYear() % 100 != 0) {
+      dayInMonth[1] = 29;
+    }
+
     values.push(0);
     values.push(date.getMonth());
-    values.push(date.getDate()-1);
-    for (let i = date.getFullYear(); i <= date.getFullYear()+1; i++) {
+    values.push(date.getDate() - 1);
+    for (let i = date.getFullYear(); i <= date.getFullYear() + 1; i++) {
       theYears.push(i)
     }
     for (let i = 1; i <= 12; i++) {
       theMonths.push(i)
     }
-    for (let i = 1; i <= 31; i++) {
+    for (let i = 1; i <= dayInMonth[values[1]]; i++) {
       theDays.push(i)
     }
-
     for (let i = 0; i <= 23; i++) {
       theHours.push(i)
     }
@@ -148,33 +155,47 @@ Page({
       years: theYears,
       months: theMonths,
       days: theDays,
-      hours:theHours,
-      mins:theMins,
+      hours: theHours,
+      mins: theMins,
 
       year: date.getFullYear(),
-      month: date.getMonth()+1,
+      month: date.getMonth() + 1,
       day: date.getDate(),
 
-      sHour:0,
-      sMin:0,
+      sHour: 0,
+      sMin: 0,
       eHour: 0,
       eMin: 0,
 
-      value:values
+      value: values
     })
   },
 
-  dateChange:function(e){
-    let that=this;
-    let val=e.detail.value;
+  dateChange: function(e) {
+    let that = this;
+    let val = e.detail.value;
+    let year = this.data.years[val[0]];
+    let month = this.data.months[val[1]];
+    let day = this.data.days[val[2]];
+    let dayInMonth = that.data.dayInMonth;
+    let theDays=[];
+    
+    if (year % 4 == 0 && year % 100 != 0) {
+      dayInMonth[1] = 29;
+    }
+    for (let i = 1; i <= dayInMonth[month-1]; i++) {
+      theDays.push(i)
+    }
+
     that.setData({
-      year: this.data.years[val[0]],
-      month: this.data.months[val[1]],
-      day: this.data.days[val[2]]
-    })
+      year: year,
+      month: month,
+      day: day,
+      days:theDays
+    });
   },
 
-  sTimeChange: function (e) {
+  sTimeChange: function(e) {
     let that = this;
     let val = e.detail.value;
     that.setData({
@@ -183,7 +204,7 @@ Page({
     })
   },
 
-  eTimeChange: function (e) {
+  eTimeChange: function(e) {
     let that = this;
     let val = e.detail.value;
     that.setData({
@@ -194,49 +215,49 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
+  onReady: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
+  onShow: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
+  onHide: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
+  onUnload: function() {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
+  onPullDownRefresh: function() {
 
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
+  onReachBottom: function() {
 
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
+  onShareAppMessage: function() {
 
   }
 })

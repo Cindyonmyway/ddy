@@ -3,15 +3,15 @@
 <view class='background'>
   <view class='whole_container'>
     <!--logs.wxml-->
+    
 
-    <view class='site'>{{name}}
-      <button bindtap='chooseLocation'>修改定位</button>
-    </view>
+    <view class='site' bindtap='chooseLocation'>当前定位：{{name}}</view>
 
 
     <view class='ts_container'>
       <view class='ts_tabSwiper'>
         <view class='ts_tab' id='{{ts_currentIndex == 0 ? "ts_tabBorer" : ""}}' data-current="0" bindtap='ts_checkCurrent'>{{ts_type}}</view>
+        <text class='grey'>|</text>
         <view class='ts_tab' id='{{ts_currentIndex == 1 ? "ts_tabBorer" : ""}}' data-current="1" bindtap='ts_checkCurrent'>{{ts_sort}}</view>
       </view>
       <swiper current="{{ts_currentIndex}}" class='ts_swiper' duration="300" bindchange="ts_bindChange" wx:if="{{ts_show}}">
@@ -33,12 +33,14 @@
     </view>
 
 
-    <view>hi</view>
+    <!-- <view>hi</view> -->
 
 
 
     <template is="invi_msg" data="{{...invi_msg}}" />
+    <template is="invi_msg" data="{{...invi_msg}}" />
 
+    <!-- <button bindtap='test'>test</button> -->
 
 
 

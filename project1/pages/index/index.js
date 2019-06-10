@@ -4,7 +4,6 @@ const app = getApp()
 
 Page({
   data: {
-    motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo')
@@ -31,6 +30,18 @@ Page({
     })
   },
   onLoad: function() {
+    var that = this;
+    wx.getSetting({
+      success: (res) => {
+        let info = 'scope.userInfo';
+        let location = 'scope.userLocation';
+        if (!(res.authSetting[info] && res.authSetting[location])){
+          wx.openSetting({
+            
+          })
+        }
+      }
+    });
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,

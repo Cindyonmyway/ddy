@@ -4,7 +4,7 @@ Page({
   data: {
     latitude: "",
     longitude: "",
-    name: "尚未定位",
+    name: "未选择定位",
     address: "",
 
 
@@ -51,7 +51,12 @@ Page({
   },
 
 
-
+  test:function(e){
+    var that = this;
+    wx.openSetting({
+      
+    })
+  },
 
   chooseLocation: function(e) {
     var that = this;

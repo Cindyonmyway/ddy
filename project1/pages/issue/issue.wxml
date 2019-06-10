@@ -3,29 +3,38 @@
   <view class='total_container'>
     <view class='title'>发布邀请</view>
     <form bindsubmit='formSubmit'>
-      <view>1、邀请类型</view>
-      <radio-group>
-        <radio value='' checked/>足球
-        <radio value='' />篮球
-        <radio value='' />跑步
-        <radio value='' />羽毛球
-      </radio-group>
+      <view class='part_container song'>
+        <view>1、邀请类型:</view>
+        <radio-group>
+          <radio value='' checked/>足球
+          <radio value='' />篮球
+          <radio value='' />跑步
+          <radio value='' />羽毛球
+        </radio-group>
+      </view>
 
-      <view class>2、时间</view>
-      <view class='time'>
+      <view class='part_container song'>
+      <view>2、时间:</view>
+      <view class='time gap'>
         <view class='time_view'>{{year}}.{{month}}.{{day}}</view>
         <view class='time_view'>{{sHour}}:{{sMin}}</view>
         <view class='time_view'>{{eHour}}:{{eMin}}</view>
       </view>
-      <view class='time'>
+      <view class='time gap'>
         <button class='time_button' bindtap='showDate'>选择日期</button>
         <button class='time_button' bindtap='showSTime'>开始时间</button>
         <button class='time_button' bindtap='showETime'>结束时间</button>
       </view>
+      <view class='valid_time gap'>邀请有效天数(1~15天)</view>
+      <slider name='valid_time' min='1' max='15' show-value></slider>
+      </view>
+      
 
-      <view class='picker_view' wx:if="{{showDate}}">
+
+
+      <view class='picker_view' wx:if='{{showDate}}'>
         <!--date-->
-        <picker-view indicator-style="height: 100rpx;" style="width: 100%; height: 600rpx;" value="{{value}}" bindchange="dateChange" class='date_picker'>
+        <picker-view indicator-style="height: 100rpx;" style="width: 100%; height: 600rpx;" value="{{value}}" bindchange="dateChange">
           <picker-view-column>
             <view wx:for="{{years}}" style="line-height: 100rpx">{{item}}年</view>
           </picker-view-column>
@@ -36,7 +45,7 @@
             <view wx:for="{{days}}" style="line-height: 100rpx">{{item}}日</view>
           </picker-view-column>
         </picker-view>
-        <button bindtap='closeDate'>确定</button>
+        <button catchtap='closeDate'>确定</button>
       </view>
 
       <view class='picker_view' wx:if="{{showSTime}}">
@@ -65,17 +74,25 @@
         <button bindtap='closeETime'>确定</button>
       </view>
 
-      <view>3、所需人数</view>
-      <input placeholder='人数' type='number' name='amount' />
+      <view class='part_container song'>
+        <view>3、所需人数:</view>
+        <input placeholder='填写人数' type='number' name='amount' />
+      </view>
 
-      <view>4、地点</view>
-      <view class='site'>{{name}}</view>
-      <button bindtap='chooseLocation' class='chooseLocation'>选择地点</button>
 
-      <view>5、详细说明</view>
-      <input placeholder='说明' name='detail' />
+      <view class='part_container song'>
+        <view>4、邀请地点:</view>
+        <view class='site' bindtap='chooseLocation'>当前地点：{{name}}</view>
+      </view>
+
+
+      <view class='part_container song'>
+        <view>5、详细说明:</view>
+        <input placeholder='填写说明' name='detail' />
+      </view>
+
       <button formType='submit' class='submit'>发布</button>
-      
+
     </form>
     <!-- <button bindtap='test'>test</button> -->
   </view>

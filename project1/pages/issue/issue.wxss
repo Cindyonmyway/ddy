@@ -13,9 +13,8 @@ input{
   padding-left: 57rpx;
 }
 
-form view{
-  margin-bottom: 15rpx;
-  margin-top: 15rpx;
+.part_container{
+  margin: 30rpx 0;
 }
 
 .total_container{
@@ -28,7 +27,7 @@ form view{
 
 .picker_view{
   width: 92%;
-  height: 70%;
+  height: 80%;
   padding-top: 180rpx;
   position: absolute;
   left: 4%;
@@ -72,6 +71,7 @@ form view{
 
 .site{
   text-align: center;
+  color: rgb(54, 182, 195);
 }
 
 .title{
@@ -95,3 +95,14 @@ form view{
   bottom: 0;
 }
 
+.valid_time{
+  text-indent: 1em;
+}
+
+.gap{
+  margin: 20rpx 0;
+}
+
+.song{
+  font-family: '宋体';
+}

@@ -2,7 +2,7 @@
 .invi_container {
   height: 260rpx;
   padding: 10rpx;
-  border: 1px solid black;
+
   border-radius: 20rpx;
   margin: 15rpx 0;
 }
@@ -31,3 +31,4 @@
   flex-direction: row;
   justify-content: space-around;
 }
+

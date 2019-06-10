@@ -28,7 +28,7 @@
 }
 
 .userinfo-nickname {
-  color: white;
+  color: whitesmoke;
 }
 
 #choose-container{
@@ -37,6 +37,8 @@
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
+  color: whitesmoke;
+  font-size: 40rpx;
 }
 
 .choose{
@@ -47,4 +49,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.song{
+  font-family: '宋体';
 }
