@@ -2,29 +2,29 @@
 <view class='background'>
   <view class='whole_container'>
     <view class='my_msg'>
-      <image class='my_img' src='{{pho}}' />
-      <view class='my_name'>{{name}}</view>
+      <image class='my_img' src='{{user.userImg}}' />
+      <view class='my_name'>{{user.name}}</view>
       <view class='my_grade'>
         <view class='stars' wx:for='{{["","","","",""]}}'>
-          <image class='icon' src='{{grade>index?"/img/star.png":"/img/emptyStar.png"}}' />
+          <image class='icon' src='{{user.score>index?"/img/star.png":"/img/emptyStar.png"}}' />
         </view>
       </view>
     </view>
     <view class='type'>
-      <image class='icon' src='{{type_icon}}' />{{type}}</view>
+      <image class='icon' src='/img/{{sportType}}.png' />{{sportType}}</view>
     <view class='num'>
-      <image class='icon' src='/img/人数.png' />{{num}}人</view>
+      <image class='icon' src='/img/人数.png' />{{number}}人</view>
     <view class='date'>
-      <image class='icon' src='/img/date.png' />{{date}}</view>
+      <image class='icon' src='/img/date.png' />{{announceDate}}</view>
     <view class='time'>
-      <image class='icon' src='/img/time.png' />{{time}}</view>
+      <image class='icon' src='/img/time.png' />{{startTime}}~{{finishTime}}</view>
     <view class='address'>
-      <image class='icon' src='/img/address.png' />{{address}}</view>
+      <image class='icon' src='/img/address.png' />{{location}}</view>
     <view class='address_detail'>
-      <image class='icon' src='/img/address_detail.png' />{{address_detail}}</view>
+      <image class='icon' src='/img/address_detail.png' />{{decription}}</view>
     <view class='instruction'>
       <image class='icon' src='/img/instruction.png' />{{instruction}}</view>
-    <view class='mark'>
+    <view class='mark' wx:if='{{is_accept==1&&is_evaluate==0}}'><!--接受了，未评分 显示-->
       <view>
         <image class='icon' src='/img/评分.png' />对本次邀请进行评分</view>
       <view class='myMark'>
@@ -33,8 +33,10 @@
         </view>
       </view>
       <button bindtap='confirm_score' class='confirm_score'>确认评分</button>
-
     </view>
-    <button bindtap='accept' class='accept'>接收邀请</button>
+    <view wx:if='{{is_accept==0}}'><!--未接受显示-->
+      <button bindtap='accept' class='accept'>接收邀请</button>
+    </view>
+
   </view>
 </view>

@@ -2,26 +2,26 @@
 <template name='invi_msg'>
   <view class='invi_container' bindtap='detail' data-index='{{index}}'>
     <view class='my_msg'>
-      <image class='invi_redPoint' src='/img/小红点.png' wx:if='{{show_redPoint}}'></image>
-      <image class='invi_pho' src='{{pho}}'></image>
-      <view class='invi_name'>{{name}}</view>
+      <image class='invi_redPoint' src='/img/小红点.png' wx:if='{{is_evaluate==0}}'></image>
+      <image class='invi_pho' src='{{user.userImg}}'></image>
+      <view class='invi_name'>{{user.name}}</view>
     </view>
     <view class='other_msg'>
       <view class='invi_type'>
-        <image class='invi_icon' src='/img/{{type}}.png' />{{type}}</view>
+        <image class='invi_icon' src='/img/{{type}}.png' />{{sportType}}</view>
       <view class='invi_address'>
-        <image class='invi_icon' src='/img/address.png' />{{address}}</view>
+        <image class='invi_icon' src='/img/address.png' />{{location}}</view>
       <view class='invi_time'>
         <view>
-          <image class='invi_icon' src='/img/date.png' />{{date}}</view>
+          <image class='invi_icon' src='/img/date.png' />{{announceDate}}</view>
         <view>
-          <image class='invi_icon' src='/img/time.png' />{{stime}}~{{etime}}</view>
+          <image class='invi_icon' src='/img/time.png' />{{startTime}}~{{finishTime}}</view>
       </view>
       <view class='invi_num'>
-        <image class='invi_icon' src='/img/人数.png' />{{num}}</view>
+        <image class='invi_icon' src='/img/人数.png' />{{number}}</view>
       <view class='invi_grade'>
         <view class='stars' wx:for='{{["","","","",""]}}'>
-          <image class='invi_icon' src='{{grade>index?"/img/star.png":"/img/emptyStar.png"}}' />
+          <image class='invi_icon' src='{{user.socre>index?"/img/star.png":"/img/emptyStar.png"}}' />
         </view>
       </view>
     </view>

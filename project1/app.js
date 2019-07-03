@@ -64,7 +64,10 @@ App({
     openid: 'empty',
     userInfo: null,
     
-    invites: ['', '']
+    invites: [],
+    accepts:[],
+    user:{},
+    allInvites:[]
   }
 
 })

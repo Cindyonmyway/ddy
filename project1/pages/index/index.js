@@ -128,10 +128,13 @@ Page({
     //   data: {
     //     id:app.globalData.openid,
     //     name: this.data.userInfo.nickName,
-    //     userImg: this.data.userInfo.avatarUrl
+    //     img: this.data.userInfo.avatarUrl
     //   },
     //   success: function (res) {
-    //     
+    //     app.globalData.invites=res.data.invitations;
+    //     app.globalData.accepts=res.data.acceptances;
+    //     app.globalData.user=res.data.user;
+    //     app.globalData.allInvites=res.data.allInvite;
     //   }
     // })
   },

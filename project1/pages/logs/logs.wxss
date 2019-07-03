@@ -30,7 +30,7 @@
   width: 100%;
   padding: 0 10rpx 10rpx 10rpx;
   background-color: white;
-  border-radius: 0 0 20rpx 20rpx;
+  border-radius: 20rpx 20rpx 20rpx 20rpx;
   position: relative;
 }
 
@@ -99,6 +99,7 @@
   height: 100rpx;
   width: 92%;
   background-color: white;
+  border-radius: 20rpx 20rpx 0 0;
 }
 
 .empty{

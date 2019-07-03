@@ -10,7 +10,7 @@ Page({
     my_id: 'todd',
     grade:3,
     my_intro: 'No money no talk',
-    my_favor:[0,0,1,0,0,0,0,0],
+    my_favor:[1,0,0,0,0,0,0,0],
 
     userInfo: {},
 
@@ -33,7 +33,9 @@ Page({
   onLoad: function (options) {
     //console.log(app.globalData.userInfo);
     this.setData({
-      userInfo:app.globalData.userInfo
+      userInfo:app.globalData.userInfo,
+      grade:app.globalData.user.score,
+      my_intro:app.globalData.user.introduction
     })
   },
 
