@@ -8,6 +8,7 @@ Page({
     name: "未选择定位",
     address: "",
 
+    invi_index:0,
 
     ts_currentIndex: -1,
     ts_show: false,
@@ -257,11 +258,17 @@ Page({
     //   url: '',
     //   method: 'POST',
     //   data: {
-    //     index:20
+    //     type: this.data.ts_type,
+    //     start:this.data.invi_index，
+    //     end:this.data.invi_index+20，
+    //     sort:this.data.ts_sort
     //   },
     //   success: function (res) {
     //     app.globalData.userMsg = res.data;
     //   }
+    // })
+    // this.setDate({
+    //   invi_index:invi_index+20
     // })
   },
 

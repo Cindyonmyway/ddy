@@ -47,7 +47,7 @@ App({
         that.globalData.code = code;
         //console.log(that.globalData.code);
         // wx.request({
-        //   url: '?code='+code,
+        //   url: '',
         //   method: 'POST',
         //   data: {
         //     code:code
