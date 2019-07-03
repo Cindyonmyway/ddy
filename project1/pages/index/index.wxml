@@ -1,19 +1,29 @@
 <!--index.wxml-->
-<view class="container">
+<view class='start_container' wx:if="{{!hasUserInfo && canIUse}}">
+  <image class='start_img' src='/img/sImg.jpg'/>
+  <button class='start_button song' open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 点击开始 </button>
+</view>
+<view wx:else class="container">
   <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <view id='user'>
-        <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+    <block>
+      <view id='user' class='box_shadow'>
+        <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover" bindtap='test'></image>
         <text class="userinfo-nickname">{{userInfo.nickName}}</text>
       </view>
-
     </block>
   </view>
   <view id='choose-container'>
-    <view class='choose song' bindtap='myMsg'>个人信息</view>
-    <view class='choose song' bindtap='issue'>发布邀请</view>
-    <view class='choose song' bindtap='inviHis'>历史邀请</view>
+    <view class='choose song box_shadow' bindtap='myMsg'>
+      <image src='/img/myMsg.png' />
+      <text>个人信息</text>
+    </view>
+    <view class='choose song box_shadow' bindtap='issue'>
+      <image src='/img/issue.png' />
+      <text>发布邀请</text>
+    </view>
+    <view class='choose song box_shadow' bindtap='inviHis'>
+      <image src='/img/history.png' />
+      <text>历史邀请</text>
+    </view>
   </view>
-  
 </view>

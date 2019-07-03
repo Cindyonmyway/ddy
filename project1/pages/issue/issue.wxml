@@ -4,31 +4,36 @@
     <view class='title'>发布邀请</view>
     <form bindsubmit='formSubmit'>
       <view class='part_container song'>
-        <view>1、邀请类型:</view>
-        <radio-group>
-          <radio value='' checked/>足球
+        <view class='grey'>
+          <image class='icon' src='/img/type.png' />邀请类型</view>
+        <radio-group class='type' name='type'>
+          <!-- <radio value='' checked/>足球
           <radio value='' />篮球
           <radio value='' />跑步
-          <radio value='' />羽毛球
+          <radio value='' />羽毛球 -->
+          <label class="radio" wx:for="{{types}}">
+            <radio value="{{item.name}}" checked="{{item.checked}}" />{{item.value}}
+          </label>
         </radio-group>
       </view>
 
       <view class='part_container song'>
-      <view>2、时间:</view>
-      <view class='time gap'>
-        <view class='time_view'>{{year}}.{{month}}.{{day}}</view>
-        <view class='time_view'>{{sHour}}:{{sMin}}</view>
-        <view class='time_view'>{{eHour}}:{{eMin}}</view>
+        <view class='grey'>
+          <image class='icon' src='/img/time.png' />时间</view>
+        <view class='time gap'>
+          <view class='time_view'>{{year}}.{{month}}.{{day}}</view>
+          <view class='time_view'>{{sHour}}:{{sMin}}</view>
+          <view class='time_view'>{{eHour}}:{{eMin}}</view>
+        </view>
+        <view class='time gap'>
+          <button class='time_button' bindtap='showDate'>选择日期</button>
+          <button class='time_button' bindtap='showSTime'>开始时间</button>
+          <button class='time_button' bindtap='showETime'>结束时间</button>
+        </view>
+        <view class='valid_time gap'>邀请有效天数(1~15天)</view>
+        <slider name='valid_time' min='0' max='15' show-value></slider>
       </view>
-      <view class='time gap'>
-        <button class='time_button' bindtap='showDate'>选择日期</button>
-        <button class='time_button' bindtap='showSTime'>开始时间</button>
-        <button class='time_button' bindtap='showETime'>结束时间</button>
-      </view>
-      <view class='valid_time gap'>邀请有效天数(1~15天)</view>
-      <slider name='valid_time' min='1' max='15' show-value></slider>
-      </view>
-      
+
 
 
 
@@ -75,23 +80,28 @@
       </view>
 
       <view class='part_container song'>
-        <view>3、所需人数:</view>
-        <input placeholder='填写人数' type='number' name='amount' />
+        <view class='grey'>
+          <image class='icon' src='/img/amount.png' />所需人数(1~10人)</view>
+        <slider name='amount' min='0' max='10' show-value></slider>
       </view>
 
 
       <view class='part_container song'>
-        <view>4、邀请地点:</view>
-        <view class='site' bindtap='chooseLocation'>当前地点：{{name}}</view>
+        <view class='grey'>
+          <image class='icon' src='/img/place.png' />邀请地点</view>
+        <view class='site' bindtap='chooseLocation'>
+          <image class='icon' src='/img/site.png' />{{name}}</view>
       </view>
 
 
       <view class='part_container song'>
-        <view>5、详细说明:</view>
-        <input placeholder='填写说明' name='detail' />
+        <view class='grey'>
+          <image class='icon' src='/img/detail.png' />详细说明</view>
+        <input placeholder='填写说明' name='detail' class='detail' />
       </view>
 
-      <button formType='submit' class='submit'>发布</button>
+      <button formType='submit' class='submit song'>
+        <image class='icon' src='/img/release.png' />发布邀请</button>
 
     </form>
     <!-- <button bindtap='test'>test</button> -->

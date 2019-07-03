@@ -1,6 +1,7 @@
 /* pages/myMsg/myMsg.wxss */
 .background{
   background-color: rgb(121, 158, 202);
+  height: 1135rpx;
   padding: 3%;
 }
 
@@ -68,3 +69,29 @@
   height: 1rpx;
   background-color: grey;
 }
+
+.border_bottom{
+  border-bottom: 1px dotted grey;
+}
+
+.favor{
+  margin: 20rpx 0rpx;
+}
+
+.icon{
+  height: 40rpx;
+  width: 40rpx;
+  position: relative;
+  top: 5rpx;
+  margin: 0 10rpx;
+}
+
+.stars{
+  display: inline-flex;
+  flex-direction: row;
+}
+
+.ft35{
+  font-size: 35rpx;
+}
+

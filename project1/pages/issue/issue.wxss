@@ -32,7 +32,7 @@ input{
   position: absolute;
   left: 4%;
   top: 15rpx;
-  z-index: 2;
+  z-index: 3;
   border-radius: 20rpx;
   background-color: white;
 }
@@ -72,6 +72,7 @@ input{
 .site{
   text-align: center;
   color: rgb(54, 182, 195);
+  margin-top: 15rpx;
 }
 
 .title{
@@ -85,8 +86,6 @@ input{
   height: 80rpx;
   font-size: 40rpx;
   line-height: 80rpx;
-  width: 50%;
-  font-weight: bold;
 }
 
 .warn{
@@ -97,6 +96,7 @@ input{
 
 .valid_time{
   text-indent: 1em;
+  font-size: 30rpx;
 }
 
 .gap{
@@ -105,4 +105,28 @@ input{
 
 .song{
   font-family: '宋体';
+}
+
+.grey{
+  background-color: rgb(218, 218, 218);
+  color: rgb(92, 92, 92);
+  height: 65rpx;
+  line-height: 65rpx;
+}
+
+.icon{
+  height: 40rpx;
+  width: 40rpx;
+  position: relative;
+  top: 5rpx;
+  margin: 0 10rpx;
+}
+
+.detail{
+  font-size: 35rpx;
+  text-indent: 0.2em;
+}
+
+.type{
+  margin-top: 20rpx;
 }

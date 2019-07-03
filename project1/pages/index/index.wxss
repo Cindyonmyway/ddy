@@ -2,6 +2,7 @@
 .container{
   width: 90%;
   margin: auto;
+  position: relative;
 }
 
 .userinfo {
@@ -29,6 +30,7 @@
 
 .userinfo-nickname {
   color: whitesmoke;
+  font-weight: bold;
 }
 
 #choose-container{
@@ -47,10 +49,53 @@
   background-color: rgb(121, 158, 202);
   border-radius: 30rpx;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
+.choose image{
+  width: 140rpx;
+  height: 140rpx;
+  margin: 10rpx 0;
+  position: relative;
+  left: 5rpx;
+}
+
+.choose text{
+  font-size: 30rpx;
+  /*font-weight: bold;*/
+}
+
 .song{
   font-family: '宋体';
+  font-weight: bold;
+}
+
+.box_shadow{
+  box-shadow: 10rpx 10rpx 20rpx grey;
+}
+
+.start_img{
+  width:100%;
+  height: 100%;
+  position: absolute;
+  z-index: 1;
+}
+
+.start_button{
+  width: 100%;
+  height: 100%;
+  line-height: 600rpx;
+  background-color: rgba(0, 0, 0, 0);
+  z-index: 2;
+  font-size: 60rpx;
+  color: white;
+}
+
+.start_container{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 2;
 }

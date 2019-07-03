@@ -8,12 +8,20 @@
       <view class='tab' id='{{currentIndex == 1 ? "tabBorer" : ""}}' data-current="1" bindtap='checkCurrent'>受邀历史</view>
     </view>
     <swiper current="{{currentIndex}}" class='swiper' duration="300" bindchange="bindChange">
-      <swiper-item>
-        <template is="invi_msg" data="{{...invi_msg}}" />
+      <swiper-item class='swiper-items'>
+        <scroll-view scroll-y='true' class='scroll-views'>
+          <view wx:for='{{invi_msgs}}'>
+            <template is="invi_msg" data="{{...item}}" />
+          </view>
+        </scroll-view>
         <!-- <view class='swiper_con'>这里是发布历史</view> -->
       </swiper-item>
       <swiper-item>
-      <template is="invi_msg" data="{{...invi_msg}}" />
+        <scroll-view scroll-y='true' class='scroll-views'>
+          <view wx:for='{{invi_msgs}}'>
+            <template is="invi_msg" data="{{...item}}" />
+          </view>
+        </scroll-view>
         <!-- <view class='swiper_con'>这里是受邀历史</view> -->
       </swiper-item>
     </swiper>

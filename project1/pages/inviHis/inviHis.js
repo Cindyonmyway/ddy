@@ -1,4 +1,6 @@
 // pages/inviHis/inviHis.js
+const app = getApp();
+
 Page({
 
   /**
@@ -6,15 +8,100 @@ Page({
    */
   data: {
     currentIndex: 0,
-    invi_msg: {
-      invi_type: '足球',
-      invi_date: "2019.6.6",
-      invi_time: '8:00~10:00',
-      invi_num: 4,
-      invi_name: 'todd',
-      invi_address: '华南师范大学',
-      invi_grade: 3.0
-    }
+    invi_msgs: [
+      {
+        type: '足球',
+        date: "2019.6.6",
+        stime: '8:00',
+        etime: '10:00',
+        num: 4,
+        pho: '/img/pic1.jpg',
+        name: 'todd',
+        address: '华南师范大学',
+        grade: 3,
+        show_redPoint:true
+      },
+      {
+        type: '篮球',
+        date: "2019.6.9",
+        stime: '8:00',
+        etime: '11:20',
+        num: 3,
+        pho: '/img/pic2.jpg',
+        name: 'lazy',
+        address: '英东体育馆',
+        grade: 4
+      },
+      {
+        type: '足球',
+        date: "2019.6.6",
+        stime: '8:00',
+        etime: '10:00',
+        num: 4,
+        pho: '/img/pic1.jpg',
+        name: 'todd',
+        address: '华南师范大学',
+        grade: 3,
+        show_redPoint: true
+      },
+      {
+        type: '篮球',
+        date: "2019.6.9",
+        stime: '8:00',
+        etime: '11:20',
+        num: 3,
+        pho: '/img/pic2.jpg',
+        name: 'lazy',
+        address: '英东体育馆',
+        grade: 4
+      },
+      {
+        type: '足球',
+        date: "2019.6.6",
+        stime: '8:00',
+        etime: '10:00',
+        num: 4,
+        pho: '/img/pic1.jpg',
+        name: 'todd',
+        address: '华南师范大学',
+        grade: 3,
+        show_redPoint: true
+      },
+      {
+        type: '篮球',
+        date: "2019.6.9",
+        stime: '8:00',
+        etime: '11:20',
+        num: 3,
+        pho: '/img/pic2.jpg',
+        name: 'lazy',
+        address: '英东体育馆',
+        grade: 4
+      },
+      {
+        type: '足球',
+        date: "2019.6.6",
+        stime: '8:00',
+        etime: '10:00',
+        num: 4,
+        pho: '/img/pic1.jpg',
+        name: 'todd',
+        address: '华南师范大学',
+        grade: 3,
+        show_redPoint: true
+      },
+      {
+        type: '篮球',
+        date: "2019.6.9",
+        stime: '8:00',
+        etime: '11:20',
+        num: 3,
+        pho: '/img/pic2.jpg',
+        name: 'lazy',
+        address: '英东体育馆',
+        grade: 4
+      }
+    ]
   },
 
   detail: function (e) {

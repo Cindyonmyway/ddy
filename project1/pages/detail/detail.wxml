@@ -2,16 +2,39 @@
 <view class='background'>
   <view class='whole_container'>
     <view class='my_msg'>
-      <view class='my_img'></view>
-      <view class='my_id'>{{id}}</view>
-      <view class='my_score'>⭐{{score}}</view>
+      <image class='my_img' src='{{pho}}' />
+      <view class='my_name'>{{name}}</view>
+      <view class='my_grade'>
+        <view class='stars' wx:for='{{["","","","",""]}}'>
+          <image class='icon' src='{{grade>index?"/img/star.png":"/img/emptyStar.png"}}' />
+        </view>
+      </view>
     </view>
-    <view class='type'>邀请类型为{{type}}</view>
-    <view class='number'>还需{{number}}人</view>
-    <view class='time'>时间：{{date}} {{time}}</view>
-    <view class='name'>地点：{{name}}</view>
-    <view class='address'>详细地址：{{address}}</view>
-    <view class='detail'>邀请详细说明：{{detail}}</view>
-    <button bindtap='accept'>接收邀请</button>
+    <view class='type'>
+      <image class='icon' src='{{type_icon}}' />{{type}}</view>
+    <view class='num'>
+      <image class='icon' src='/img/人数.png' />{{num}}人</view>
+    <view class='date'>
+      <image class='icon' src='/img/date.png' />{{date}}</view>
+    <view class='time'>
+      <image class='icon' src='/img/time.png' />{{time}}</view>
+    <view class='address'>
+      <image class='icon' src='/img/address.png' />{{address}}</view>
+    <view class='address_detail'>
+      <image class='icon' src='/img/address_detail.png' />{{address_detail}}</view>
+    <view class='instruction'>
+      <image class='icon' src='/img/instruction.png' />{{instruction}}</view>
+    <view class='mark'>
+      <view>
+        <image class='icon' src='/img/评分.png' />对本次邀请进行评分</view>
+      <view class='myMark'>
+        <view class='stars' wx:for='{{["","","","",""]}}'>
+          <image class='icon' src='{{myMark>index?"/img/star.png":"/img/emptyStar.png"}}' bindtap='mark' data-index='{{index}}' />
+        </view>
+      </view>
+      <button bindtap='confirm_score' class='confirm_score'>确认评分</button>
+
+    </view>
+    <button bindtap='accept' class='accept'>接收邀请</button>
   </view>
 </view>

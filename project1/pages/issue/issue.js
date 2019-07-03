@@ -10,6 +10,19 @@ Page({
     name: '未选择地点',
     address: '',
 
+    types:[
+      { name: 'football', value: '足球',checked:'checked' },
+      { name: 'basketball', value: '篮球' },
+      { name: 'badminton', value: '羽毛球' },
+      { name: 'shopping', value: '逛街' },
+      { name: 'run', value: '跑步' },
+      { name: 'read', value: '看书' },
+      { name: 'pingpong', value: '乒乓球' },
+      { name: 'other', value: '其他' }
+    ],
+
+    date:'',
+
     value: [],
     years: [],
     months: [],
@@ -33,23 +46,46 @@ Page({
   },
 
   formSubmit: function(e) {
-    let amount = (e.detail.value.amount.length == 0);
+    console.log(e);
+    let v_time = (e.detail.value.valid_time.length == 0 || e.detail.value.valid_time == 0);
+    let amount = (e.detail.value.amount.length == 0 || e.detail.value.amount==0);
     let detail = (e.detail.value.detail.length == 0);
-    let name = (this.data.name == '请选择地点');
+    let name = (this.data.name == '未选择地点');
+
+    let time=false;
+    let date=this.data.date;
+    let month=this.data.month;
+    let day=this.data.day;
+
+    let sHour=this.data.sHour;
+    let sMin=this.data.sMin;
+    let eHour=this.data.eHour;
+    let eMin=this.data.eMin;
+
+    if(month<(date.getMonth()+1)||day<date.getDate()){
+      time=true;
+    }else if(sHour>eHour||(sHour==eHour&&sMin>eMin)){
+      time=true;
+    }
+    // console.log(this.data.date);
+    // console.log(this.data.date.getFullYear());
+    // console.log(this.data.date.getMonth()+1);
+    // console.log(this.data.date.getDate());
+
     // console.log(this.data.dayInMonth[1]);
-    if (amount || detail || name) {
+    if (v_time||amount || detail || name||time) {
       console.log('表单未填写完整');
       return;
     }
     console.log('表单已填写完整');
   },
 
-  chooseLocation: function(e) {
+  chooseLocation: function (e) {
     var that = this;
     wx.getSetting({
-      success: function(res) {
+      success: function (res) {
         wx.chooseLocation({
-          success: function(res) {
+          success: function (res) {
             that.setData({
               latitude: res.latitude,
               longitude: res.longitude,
@@ -57,18 +93,19 @@ Page({
               address: res.address
             });
           },
-          fail: function(res) {
-            wx.openSetting({
+          fail: function (res) {
+            success: (res) => {
+              let location = 'scope.userLocation';
+              if (!res.authSetting[location]) {
+                wx.openSetting({
 
-            })
+                })
+              }
+            }
           }
         })
       }
-    });
-    // console.log(that.data.latitude);
-    // console.log(that.data.longitude);
-    // console.log(that.data.name);
-    // console.log(that.data.address);
+    })
   },
 
   showDate: function(e) {
@@ -152,6 +189,8 @@ Page({
     }
 
     that.setData({
+      date:date,
+
       years: theYears,
       months: theMonths,
       days: theDays,

@@ -2,7 +2,7 @@
 
 .background{
   background-color: rgb(121, 158, 202);
-  padding: 3%;
+  padding: 0 3% 3% 3%;
 }
 
 .site{
@@ -18,12 +18,20 @@
   display: inline-block;
 }
 
+.site image{
+  width:40rpx;
+  height: 40rpx;
+  position: relative;
+  top: 3rpx;
+}
+
 .whole_container {
   box-sizing: border-box;
   width: 100%;
-  padding: 10rpx;
+  padding: 0 10rpx 10rpx 10rpx;
   background-color: white;
-  border-radius: 20rpx;
+  border-radius: 0 0 20rpx 20rpx;
+  position: relative;
 }
 
 .selectBox {
@@ -43,8 +51,15 @@
   color: grey;
 }
 
+.ts_tab image{
+  width: 40rpx;
+  height: 40rpx;
+  position: relative;
+  top: 8rpx;
+}
+
 #ts_tabBorer {
-  color: rgb(54, 182, 195);
+  color: rgb(155, 202, 45);
 }
 
 .ts_list {
@@ -54,13 +69,14 @@
 }
 
 .ts_item {
-  margin: 10rpx 3.5%;
-  border-radius: 20rpx;
-  width: 25%;
-  display: inline-block;
-  border: 1rpx solid grey;
-  text-align: center;
+  width: 100%;
+  border-bottom: 1rpx dotted grey;
   font-size: 33rpx;
+  height: 70rpx;
+  line-height:70rpx;
+  text-indent: 1em;
+  letter-spacing: 2rpx;
+  position: relative;
 }
 
 
@@ -68,8 +84,66 @@
   color: grey;
 }
 
-
 .ts_swiper {
-  height: 150rpx;
+  height: 560rpx;
+  
+  /*border-bottom: 1rpx dotted red;*/
+  background-color: white;
+  width: 100%;
+  position: absolute;
 }
 
+.fixed{
+  position: fixed;
+  z-index: 3;
+  height: 100rpx;
+  width: 92%;
+  background-color: white;
+}
+
+.empty{
+  width: 100%;
+  height: 100rpx;
+}
+
+#t_selected{
+  color: rgb(155, 202, 45);
+}
+
+#s_selected{
+  color: rgb(155, 202, 45);
+}
+
+.ts_icon{
+  height: 40rpx;
+  width: 40rpx;
+  position: absolute;
+  top: 10rpx;
+  right: 30rpx;
+}
+
+.mask{
+  position: absolute;
+  top: 652rpx;
+  left: -8rpx;
+  width: 707rpx;
+  height: 430rpx;
+  background-color: rgba(0, 0, 0, 0.329);
+  z-index: 1;
+  border-radius: 0 0 20rpx 20rpx;
+}
+
+.more{
+  height: 80rpx;
+  font-size: 40rpx;
+  line-height: 80rpx;
+  font-family: '宋体'
+}
+
+.icon{
+  height: 40rpx;
+  width: 40rpx;
+  position: relative;
+  top: 5rpx;
+  margin: 0 10rpx;
+}

@@ -1,20 +1,30 @@
 <!--template/invi_msg.wxml-->
 <template name='invi_msg'>
-  <view class='invi_container' bindtap='detail'>
-    <view class='invi_top'>
-      <view class='invi_img'></view>
-      <view class='invi_type'>{{invi_type}}</view>
+  <view class='invi_container' bindtap='detail' data-index='{{index}}'>
+    <view class='my_msg'>
+      <image class='invi_redPoint' src='/img/小红点.png' wx:if='{{show_redPoint}}'></image>
+      <image class='invi_pho' src='{{pho}}'></image>
+      <view class='invi_name'>{{name}}</view>
+    </view>
+    <view class='other_msg'>
+      <view class='invi_type'>
+        <image class='invi_icon' src='/img/{{type}}.png' />{{type}}</view>
+      <view class='invi_address'>
+        <image class='invi_icon' src='/img/address.png' />{{address}}</view>
       <view class='invi_time'>
-        <view>{{invi_date}}</view>
-        <view>{{invi_time}}</view>
+        <view>
+          <image class='invi_icon' src='/img/date.png' />{{date}}</view>
+        <view>
+          <image class='invi_icon' src='/img/time.png' />{{stime}}~{{etime}}</view>
       </view>
-      <view class='invi_num'>{{invi_num}}人</view>
+      <view class='invi_num'>
+        <image class='invi_icon' src='/img/人数.png' />{{num}}</view>
+      <view class='invi_grade'>
+        <view class='stars' wx:for='{{["","","","",""]}}'>
+          <image class='invi_icon' src='{{grade>index?"/img/star.png":"/img/emptyStar.png"}}' />
+        </view>
+      </view>
     </view>
-    <view class='invi_bottom'>
-      <view class='invi_name'>{{invi_name}}</view>
-      <view class='invi_address'>{{invi_address}}</view>
-      <view class='invi_grade'>⭐{{invi_grade}}</view>
-    </view>
-  </view>
 
+  </view>
 </template>

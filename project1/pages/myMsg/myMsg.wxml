@@ -14,14 +14,32 @@
         <!-- <view class='my_img'></view>
         <view class='my_id'>{{my_id}}</view> -->
         <form bindsubmit='formSubmit'>
-          <view class='my_score gap song'>星级：⭐
-            <text class='golden'>{{my_score}}</text>
+          <view class='my_score gap song border_bottom'>
+            <image class='icon' src='/img/score.png' />评分
+            <view>
+              <view class='stars' wx:for='{{["","","","",""]}}'>
+                <image class='icon' src='{{grade>index?"/img/star.png":"/img/emptyStar.png"}}' />
+              </view>
+            </view>
           </view>
-          <view class='line'></view>
-          <view class='my_sign gap song'>个人签名:<input placeholder='{{my_sign}}'></input></view>
-          <view class='line'></view>
-          <view class='my_intro gap song'>个人介绍:<input placeholder='{{my_intro}}'></input></view>
-          <button class='song submit' form-type='submit'>提交修改信息</button>
+
+          <!-- <view class='my_sign gap song'>个人签名:<input placeholder='{{my_sign}}'></input></view> -->
+          <view class='song gap border_bottom'>
+            <image class='icon' src='../../img/favor.png' />个人偏好
+            <checkbox-group class='favor' name='favor'>
+              <label class="checkbox ft35" wx:for="{{tags}}">
+                <checkbox value="{{item.name}}" checked='{{my_favor[index]==1?"checked":null}}' />{{item.value}}
+              </label>
+            </checkbox-group>
+          </view>
+
+
+          <view class='my_intro gap song'>
+            <image class='icon' src='/img/introduce.png' />个人介绍
+            <input class='ft35' placeholder='{{my_intro}}' name='intro'></input>
+          </view>
+          <button class='song submit' form-type='submit'>
+            <image class='icon' src='/img/submit.png' />修改信息</button>
         </form>
 
       </view>

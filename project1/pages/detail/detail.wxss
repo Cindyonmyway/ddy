@@ -1,7 +1,9 @@
 /* pages/detail/detail.wxss */
-.background{
+
+.background {
   background-color: rgb(121, 158, 202);
   padding: 3%;
+  height: 1135rpx;
 }
 
 .whole_container {
@@ -10,17 +12,52 @@
   padding: 10rpx;
   background-color: white;
   border-radius: 20rpx;
+  font-family: '宋体';
 }
 
-.my_msg{
+.whole_container>view{
+  margin: 15rpx 0;
+}
+
+.my_msg {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.my_img{
-  width: 120rpx;
-  height: 120rpx;
+.my_img {
+  height: 180rpx;
+  width: 180rpx;
   border-radius: 50%;
-  background-color: grey;
+}
+
+.stars{
+  display: inline-flex;
+  flex-direction: row;
+}
+
+.icon{
+  height: 40rpx;
+  width: 40rpx;
+  position: relative;
+  top: 5rpx;
+  margin:0 10rpx;
+}
+
+.accept{
+  font-size: 40rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+
+.mark{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.confirm_score{
+  font-size: 40rpx;
+  height: 80rpx;
+  line-height: 80rpx;
 }

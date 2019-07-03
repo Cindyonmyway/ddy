@@ -5,15 +5,18 @@ Page({
    * 页面的初始数据
    */
   data: {
-    id:'todd',
-    score:'3.0',
-    type:'足球',
-    number:4,
-    date:'2019.6.6',
-    time:'8:00~10:00',
-    name:'华南师范大学 ',
-    address:'广州市天河区中山大道西55号',
-    detail:'提前半小时在华师西门集合'
+    type: '足球',
+    date: "2019.6.6",
+    time: '8:00~10:00',
+    num: 4,
+    pho: '/img/pic1.jpg',
+    name: 'todd',
+    address: '华南师范大学',
+    address_detail: '广州市天河区中山大道西55号',
+    grade: 3,
+    type_icon: '/img/足球.png',
+    instruction:'提前半小时在华师西门集合',
+    myMark:0
   },
 
   /**
@@ -21,6 +24,13 @@ Page({
    */
   onLoad: function (options) {
 
+  },
+
+  mark:function(e){
+    let that=this;
+    that.setData({
+      myMark:e.currentTarget.dataset.index+1
+    });
   },
 
   /**
