@@ -1,4 +1,6 @@
 // pages/detail/detail.js
+const app = getApp();
+
 Page({
 
   /**
@@ -7,7 +9,8 @@ Page({
   data: {
     type: '足球',
     date: "2019.6.6",
-    time: '8:00~10:00',
+    stime:'8:00',
+    etime:'10:00',
     num: 4,
     pho: '/img/pic1.jpg',
     name: 'todd',
@@ -31,6 +34,36 @@ Page({
     that.setData({
       myMark:e.currentTarget.dataset.index+1
     });
+  },
+
+  confirm_score:function(e){
+    wx.request({
+      url: '',
+      method: 'POST',
+      data: {
+        mark: myMark,
+        id: this.data.id
+      },
+      success: function (res) {
+        
+      }
+    })
+  },
+
+  accept:function(e){
+    wx.request({
+      url: '',
+      method: 'POST',
+      data: {
+        id: this.data.id,
+        openid:app.globalData.openid
+      },
+      success: function (res) {
+
+      }
+    });
+    app.globalData.allInvites[inviteIndex].is_accept=1;
+    app.globalData.accepts.push(app.globalData.allInvites[inviteIndex]);
   },
 
   /**

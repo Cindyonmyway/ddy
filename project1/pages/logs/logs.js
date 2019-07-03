@@ -39,7 +39,7 @@ Page({
 
 
 
-    invi_msgs: [{
+     invi_msgs:[{
         type: '足球',
         date: "2019.6.6",
         stime:'8:00',
@@ -142,7 +142,9 @@ Page({
 
   },
   onLoad: function() {
-
+    // this.setData({
+    //   invi_msgs: app.globalData.allInvites
+    // })
   },
 
   getInvites: function() {
@@ -217,8 +219,10 @@ Page({
     } else {
       that.setData({
         ts_show: true,
-        ts_currentIndex: e.target.dataset.current
+        ts_currentIndex: e.target.dataset.current,
+        
       })
+      
     }
   },
 
@@ -236,9 +240,10 @@ Page({
       ts_show: false,
       ts_type: that.data.ts_typeArray[theIndex].text,
       ts_currentIndex: -1,
-      ts_t_num: theIndex
+      ts_t_num: theIndex,
+      invi_index: 0
     });
-
+    this.askForNew();
   },
 
   ts_setSort: function(e) {
@@ -249,40 +254,43 @@ Page({
       ts_show: false,
       ts_sort: that.data.ts_sortArray[theIndex].text,
       ts_currentIndex: -1,
-      ts_s_num: theIndex
+      ts_s_num: theIndex,
+      invi_index: 0
     })
+    this.askForNew();
   },
 
   more:function(e){
-    // wx.request({
-    //   url: '',
-    //   method: 'POST',
-    //   data: {
-    //     type: this.data.ts_type,
-    //     start:this.data.invi_index，
-    //     end:this.data.invi_index+20，
-    //     sort:this.data.ts_sort
-    //   },
-    //   success: function (res) {
-    //     app.globalData.userMsg = res.data;
-    //   }
-    // })
-    // this.setDate({
-    //   invi_index:invi_index+20
-    // })
+    this.askForNew();
+    this.setData({
+      invi_index:this.data.invi_index+20
+    })
   },
 
   askForNew:function(){
-    // wx.request({
-    //   url: '',
-    //   method: 'POST',
-    //   data: {
-    //     type:this.data.ts_type,
-    //     sort:this.data.ts_sort
-    //   },
-    //   success: function (res) {
-    //     app.globalData.userMsg = res.data;
-    //   }
-    // })
+    let url='';
+    let sort = this.data.ts_sort
+    if(sort=='时间最少'){
+      url='';
+    }
+    else if(sort='评分优先'){
+      url='';
+    }
+    else{
+      url=''
+    }
+    wx.request({
+      url: '',
+      method: 'POST',
+      data: {
+        type: this.data.ts_type,
+        start: this.data.invi_index,
+        end: this.data.invi_index + 20,
+        sort: this.data.ts_sort
+      },
+      success: function (res) {
+        app.globalData.allInvites = res.data;
+      }
+    })
   }
 })

@@ -67,7 +67,8 @@ App({
     invites: [],
     accepts:[],
     user:{},
-    allInvites:[]
+    allInvites:[],
+    inviteIndex:-1
   }
 
 })
